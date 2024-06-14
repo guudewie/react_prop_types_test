@@ -1,24 +1,22 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
-import Profile from "./Profile";
+import Profile from "./Cooking";
 import ErrorPage from "./ErrorPage";
+import Cooking from "./Cooking";
 
-const router = createBrowserRouter([
+const routes = [
   {
     path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "profile/:name",
-    element: <Profile />,
+    path: "cooking",
+    element: <Cooking />,
   },
-]);
+  {
+    path: "cooking/:name",
+    element: <Cooking />,
+  },
+];
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
-);
+export default routes;
